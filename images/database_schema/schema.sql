@@ -1,6 +1,4 @@
-START TRANSACTION;
-
-Drop table if exists places;
+DROP TABLE IF EXISTS places;
 
 CREATE TABLE places (
   place_id INT AUTO_INCREMENT,
@@ -10,18 +8,15 @@ CREATE TABLE places (
   PRIMARY KEY (place_id)
 );
 
-Drop table if exists people;
+DROP TABLE IF EXISTS people;
 
-CREATE TABLE people(
+CREATE TABLE people (
   people_id INT AUTO_INCREMENT,
   given_name VARCHAR(50),
   family_name VARCHAR(50),
   date_of_birth DATE,
   place_of_birth VARCHAR(100),
-  primary key (people_id)
+  PRIMARY KEY (people_id)
 );
-
-commit;
-
 
 
