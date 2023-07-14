@@ -21,4 +21,4 @@ services:
     build: images/database_schema
     command: ["./schema.py"]
     volumes:
-      - .images/database_schema/schema.sql:/app/schema.sql
+      - ./images/database_schema/schema.sql:/app/schema.sql
