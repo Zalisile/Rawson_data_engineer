@@ -7,3 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY schema.sql ./
 COPY schema.py ./
+
+RUN chmod +x schema.py

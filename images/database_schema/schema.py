@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sqlalchemy
 from sqlalchemy import text
 

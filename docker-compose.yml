@@ -12,7 +12,7 @@ services:
       - MYSQL_USER=codetest
       - MYSQL_PASSWORD=swordfish
     ports:
-      - "3306:3306"
+      - "3307:3307"
     restart: always
 
 
