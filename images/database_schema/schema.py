@@ -10,4 +10,9 @@ with connection as con:
         query = text(file.read())
         con.execute(query)
 
-metadata = sqlalchemy.schema.MetaData(engine)
+cursor=db.cursor()
+
+cursor.execute("SHOW TABLES")
+
+for table_name in cursor:
+   print(table_name)
