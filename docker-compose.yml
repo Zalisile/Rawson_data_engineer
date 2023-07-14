@@ -18,7 +18,7 @@ services:
 
   db_schema:
     image: database_schema
-    build: images/database_shema
+    build: images/database_schema
     command: ["./schema.py"]
     volumes:
       - ./data:/data
