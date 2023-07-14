@@ -12,9 +12,7 @@ with connection as con:
         query = text(file.read())
         con.execute(query)
 
-cursor=db.cursor()
-
-cursor.execute("SHOW TABLES")
-
-for table_name in cursor:
-   print(table_name)
+# Fetch tables and print them
+table_names = engine.table_names()
+for table_name in table_names:
+    print(table_name)
