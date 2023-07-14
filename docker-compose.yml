@@ -14,3 +14,11 @@ services:
     ports:
       - "3306:3306"
     restart: always
+
+
+  db_schema:
+    image: database_schema
+    build: images/database_shema
+    command: ["./schema.py"]
+    volumes:
+      - ./data:/data
