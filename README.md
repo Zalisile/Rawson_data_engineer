@@ -14,6 +14,7 @@ and executes the SQL query to retrieve the required data.
 It also waits for a certain amount of time before querying and writing the JSON output file to ensure the data is available.
 
 **A data folder containing four files:**
+
     -places.csv 113 rows, where each row has a city, county, and country name.
     
     -people.csv 10,000 rows, where each row has a first name, last name, date of birth, and city of birth.
