@@ -10,7 +10,7 @@ time.sleep(5)
 print("Wait is over.")
 
 # Connect to the database
-msqldb_uri = 'mysql://codetest:swordfish@database:3306/codetest'
+msqldb_uri = 'mysql://codetest:swordfish@database:3307/codetest'
 engine = sqlalchemy.create_engine(msqldb_uri)
 
 print("Waiting for 5 seconds.")
