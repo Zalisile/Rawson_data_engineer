@@ -13,6 +13,10 @@ print("Wait is over.")
 msqldb_uri = 'mysql://codetest:swordfish@database:3306/codetest'
 engine = sqlalchemy.create_engine(msqldb_uri)
 
+print("Waiting for 5 seconds.")
+time.sleep(5)
+print("Wait is over.")
+
 # Execute schema.sql
 with engine.connect() as con:
     with open('./schema.sql') as file:
