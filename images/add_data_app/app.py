@@ -42,6 +42,24 @@ with open('./data/people.csv') as csv_file:
     # Insert multiple rows at once
     engine.connect().execute(Peope_data.insert().values(rows))
  
-print("Waiting for 5 seconds.")
-time.sleep(5)
+print("Waiting for 300 seconds.")
+time.sleep(300)
 print("Wait is over.")
+
+
+places_data = sqlalchemy.schema.Table('places', metadata, autoload=True, autoload_with=engine)
+
+# Read the CSV data file into the table
+with open('./data/places.csv') as csv_file:
+    reader = csv.reader(csv_file)
+    next(reader)
+    rows = []
+    for row in reader:
+        rows.append({'city': row[0], 'county': row[1], 'country': row[2] })
+    # Delay for a few seconds before connecting to the database
+    print("Waiting for 15 seconds.")
+    time.sleep(15)
+    print("Wait is over.")    
+
+    # Insert multiple rows at once
+    engine.connect().execute(places_data.insert().values(rows))
