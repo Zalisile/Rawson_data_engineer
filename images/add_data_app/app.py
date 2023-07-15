@@ -11,7 +11,7 @@ deprecations.SILENCE_UBER_WARNING = True
 # Delay for a few seconds before connecting to the database
 print("Waiting for 120 seconds.")
 time.sleep(120)
-print("Wait is over.")
+print("Connection to the database established.")
 
 
 # Connect to the database
@@ -21,7 +21,7 @@ engine = sqlalchemy.create_engine(msqldb_uri)
 # Delay for a few seconds before connecting to the database
 print("Waiting for 5 seconds.")
 time.sleep(5)
-print("Wait is over.")
+print("Connection to the database established.")
 
 metadata = sqlalchemy.schema.MetaData(engine)
 
@@ -38,14 +38,14 @@ with open('./data/people.csv') as csv_file:
     # Delay for a few seconds before connecting to the database
     print("Waiting for 15 seconds.")
     time.sleep(15)
-    print("Wait is over.")    
+    print("Table creation done")    
 
     # Insert multiple rows at once
     engine.connect().execute(Peope_data.insert().values(rows))
  
-print("Waiting for 300 seconds.")
-time.sleep(300)
-print("Wait is over.")
+print("Waiting for 240 seconds.")
+time.sleep(240)
+print("Data insertion done")
 
 
 places_data = sqlalchemy.schema.Table('places', metadata, autoload=True, autoload_with=engine)
@@ -60,15 +60,15 @@ with open('./data/places.csv') as csv_file:
     # Delay for a few seconds before connecting to the database
     print("Waiting for 15 seconds.")
     time.sleep(15)
-    print("Wait is over.")    
+    print("Table creation done")    
 
     # Insert multiple rows at once
     engine.connect().execute(places_data.insert().values(rows))
 
 
-print("Waiting for 180 seconds.")
+print("Waiting for 120 seconds.")
 time.sleep(180)
-print("Wait is over.")
+print("Data insertion done")
 
 
 # Execute the SQL query
