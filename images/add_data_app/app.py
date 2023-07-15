@@ -68,7 +68,7 @@ with open('./data/places.csv') as csv_file:
 
 print("Waiting for 120 seconds.")
 time.sleep(180)
-print("Data insertion done")
+print("Data insertion done, SQL execution is in progress and creation of the json file")
 
 
 # Execute the SQL query

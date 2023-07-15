@@ -7,7 +7,7 @@ deprecations.SILENCE_UBER_WARNING = True
 
 print("Waiting for 60 seconds.")
 time.sleep(60)
-print("Wait is over.")
+print("Connection to the database established.")
 
 # Connect to the database
 msqldb_uri = 'mysql://codetest:swordfish@database/codetest'
@@ -15,7 +15,7 @@ engine = sqlalchemy.create_engine(msqldb_uri)
 
 print("Waiting for 5 seconds.")
 time.sleep(5)
-print("Wait is over.")
+print("Connection to the database established.")
 
 # Execute schema.sql
 with engine.connect() as con:
@@ -25,7 +25,7 @@ with engine.connect() as con:
 
 print("Waiting for 5 seconds.")
 time.sleep(5)
-print("Wait is over.")
+print("Schema execution successful, table display below:")
 
 # Fetch tables and print them
 inspector = sqlalchemy.inspect(engine.connect())
