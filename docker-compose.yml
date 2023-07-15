@@ -34,3 +34,4 @@ services:
     command: ["./app.py"]
     networks:
       - my_network
+      
