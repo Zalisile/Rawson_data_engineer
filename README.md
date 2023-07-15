@@ -7,18 +7,27 @@ Code test for data engineering
 **Add_data_app:** 
 The first image handles the database connection and table creation. It waits for a certain amount of time to ensure the database is ready before proceeding.
 
-**Schema_app:** The second image processes the data from the CSV files, inserts the data into the tables, and executes the SQL query to retrieve the required data. It also waits for a certain amount of time before querying and writing the JSON output file to ensure the data is available.
-The  Github repo containing:
+**Schema_app:** The second image processes the data from the CSV files, inserts the data into the tables,
+
+and executes the SQL query to retrieve the required data. 
+
+It also waits for a certain amount of time before querying and writing the JSON output file to ensure the data is available.
 
 **A data folder containing four files:**
     -places.csv 113 rows, where each row has a city, county, and country name.
+    
     -people.csv 10,000 rows, where each row has a first name, last name, date of birth, and city of birth.
+    
     -sample_output.json Sample output file, to show what your output should look like.
 
 **Some of the sources I have referenced:**
 
 https://devopscube.com/build-docker-image/
+
 https://docker-curriculum.com/
+
 https://pythonspeed.com/articles/base-image-python-docker-images/#:~:text=If%20you%20want%20the%20absolute,Debian%20Bookworm%2C%20released%20June%202023.
+
 https://stackoverflow.com/questions/tagged/docker
+
 https://chat.openai.com/
