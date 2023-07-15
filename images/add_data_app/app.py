@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import json
 import time
 import csv
 import sqlalchemy
@@ -63,3 +64,36 @@ with open('./data/places.csv') as csv_file:
 
     # Insert multiple rows at once
     engine.connect().execute(places_data.insert().values(rows))
+
+
+print("Waiting for 180 seconds.")
+time.sleep(180)
+print("Wait is over.")
+
+
+# Execute the SQL query
+query = """
+SELECT places.country, COUNT(people.place_of_birth) AS birth_count
+FROM people
+INNER JOIN places ON places.city = people.place_of_birth
+GROUP BY places.country
+ORDER BY places.country DESC;
+"""
+result = engine.execute(text(query))
+
+# Fetch all rows from the result
+rows = result.fetchall()
+
+# Prepare the output data
+output_data = []
+for row in rows:
+    output_data.append({"country": row["country"], "birth_count": row["birth_count"]})
+
+# Define the output file path
+output_file = "./data/summary_output.json"
+
+# Write the data to the JSON file
+with open(output_file, "w") as json_file:
+    json.dump(output_data, json_file, indent=4)
+
+print(f"Summary output saved to {output_file}")
