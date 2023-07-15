@@ -34,8 +34,8 @@ services:
     command: ["./app.py"]
     networks:
       - my_network
-      
-add_data_app:
+
+  add_data_app:
     build:
       context: ./images/add_data_app
       dockerfile: Dockerfile
