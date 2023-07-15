@@ -5,8 +5,8 @@ from sqlalchemy import text
 from sqlalchemy.util import deprecations
 deprecations.SILENCE_UBER_WARNING = True
 
-print("Waiting for 5 seconds.")
-time.sleep(5)
+print("Waiting for 60 seconds.")
+time.sleep(60)
 print("Wait is over.")
 
 # Connect to the database
