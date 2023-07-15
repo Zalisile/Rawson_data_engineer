@@ -13,19 +13,16 @@ print("Wait is over.")
 msqldb_uri = 'mysql://codetest:swordfish@database:3306/codetest'
 engine = sqlalchemy.create_engine(msqldb_uri)
 
- 
 # Execute schema.sql
 with engine.connect() as con:
     with open('./schema.sql') as file:
         query = text(file.read())
         con.execute(query)
 
- 
 print("Waiting for 5 seconds.")
 time.sleep(5)
 print("Wait is over.")
 
- 
 # Fetch tables and print them
 inspector = sqlalchemy.inspect(engine.connect())
 table_names = inspector.get_table_names()
