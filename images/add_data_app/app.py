@@ -87,7 +87,7 @@ rows = result.fetchall()
 # Prepare the output data
 output_data = []
 for row in rows:
-    output_data.append({ row["country"], row["birth_count"]})
+    output_data.append({"country": row["country"], "birth_count": row["birth_count"]})
 
 # Define the output file path
 output_file = "./data/summary_output.json"
