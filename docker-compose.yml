@@ -1,5 +1,9 @@
 version: "3.7"
 
+networks:
+  my_network:
+    external: true
+
 services:
   database:
     image: mysql:8.0
@@ -14,11 +18,19 @@ services:
     ports:
       - "3307:3307"
     restart: always
+    networks:
+      - my_network
 
-
-  db_schema:
-    image: database_schema
-    build: images/database_schema
-    command: ["./schema.py"]
+  schema_app:
+    build:
+      context: ./images/schema_app
+      dockerfile: Dockerfile
     volumes:
-      - ./images/database_schema/schema.sql:/app/schema.sql
+      - ./data:/app/data
+    links:
+      - database
+    depends_on:
+      - database
+    command: ["./app.py"]
+    networks:
+      - my_network
