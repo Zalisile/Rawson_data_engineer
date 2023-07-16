@@ -21,7 +21,46 @@ It also waits for a certain amount of time before querying and writing the JSON 
     
     -sample_output.json Sample output file, to show what your output should look like.
 
-How to  running the code:
+**Instsructions on how to  running the code:**
+
+Step 1: Download and unzip the code
+
+        - Download the code from the provided GitHub link.
+        - Unzip the downloaded file to a location of your choice.
+
+Step 2: Open Command Prompt
+
+        - Open Command Prompt (cmd) by pressing the Windows key, typing "cmd," and selecting the Command Prompt application.
+
+Step 3: Navigate to the code directory
+
+        - Use the `cd` command to navigate to the `Rawson_data_engineer-main` folder within the extracted code directory.
+        - For example, if you extracted the code to `C:\path\to\Rawson_data_engineer-main`, run the following command:
+                
+                cd C:\path\to\Rawson_data_engineer-main
+
+
+Step 4: Stop any existing Docker containers
+
+        - Before running the code, make sure you don't have any other Docker containers running.
+        - Run the following command to stop any running containers:
+
+                docker compose down
+
+Step 5: Build and run the Docker containers
+
+        - Run the following command to build the Docker images and start the containers:
+
+                docker-compose up --build
+
+
+Step 6: Wait for the code to complete
+
+        - The code may take approximately 10 minutes to run.
+        - Wait for the code execution to finish.
+
+After completing these steps, the code will have executed, and you should see the output and any generated files according to the code's logic.
+
 
 
 **Some of the sources I have referenced:**
