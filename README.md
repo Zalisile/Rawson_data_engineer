@@ -21,6 +21,9 @@ It also waits for a certain amount of time before querying and writing the JSON 
     
     -sample_output.json Sample output file, to show what your output should look like.
 
+How to  running the code:
+
+
 **Some of the sources I have referenced:**
 
 https://devopscube.com/build-docker-image/
